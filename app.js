@@ -3,8 +3,7 @@ document.getElementById('lyricForm').addEventListener('submit', function(e) {
 
   // Get form values
   const song = document.getElementById('song').value.trim();
-  const artist = document.getElementById('artist').value.trim();
-  const lyric = document.getElementById('lyric').value.trim();
+  const lyrics = document.getElementById('lyrics').value.trim();
   const feeling = document.getElementById('feeling').value.trim();
 
   // Create entry card
@@ -12,8 +11,8 @@ document.getElementById('lyricForm').addEventListener('submit', function(e) {
   entryCard.className = 'entry-card';
 
   entryCard.innerHTML = `
-    <div class="entry-lyric">"${lyric}"</div>
-    <div class="entry-meta">— ${song} by ${artist}</div>
+    <div class="entry-lyric">${lyrics.replace(/\n/g, '<br>')}</div>
+    <div class="entry-meta">${song ? `— ${song}` : ""}</div>
     <div class="entry-feeling">💬 ${feeling}</div>
   `;
 
