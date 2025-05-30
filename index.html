@@ -12,11 +12,36 @@
     <p>Welcome to the vibestho app!</p>
   </header>
   <main>
-    <h2>Let the vibes flow.</h2>
-    <p>This is your starting point for the vibestho application. Customize this page to build out your features!</p>
+    <section class="lyric-form-section">
+      <h2>Share how a lyric makes you feel</h2>
+      <form id="lyricForm" autocomplete="off">
+        <label>
+          Song Title
+          <input type="text" id="song" name="song" required placeholder="e.g., Imagine">
+        </label>
+        <label>
+          Artist
+          <input type="text" id="artist" name="artist" required placeholder="e.g., John Lennon">
+        </label>
+        <label>
+          Lyric
+          <textarea id="lyric" name="lyric" required placeholder="Paste the lyric here"></textarea>
+        </label>
+        <label>
+          How does it make you feel?
+          <input type="text" id="feeling" name="feeling" required placeholder="e.g., Hopeful, nostalgic, etc.">
+        </label>
+        <button type="submit">Add Entry</button>
+      </form>
+    </section>
+    <section id="entriesSection">
+      <h2>Lyric Feels Gallery</h2>
+      <div id="entries"></div>
+    </section>
   </main>
   <footer>
     &copy; 2025 vibestho
   </footer>
+  <script src="app.js"></script>
 </body>
 </html>
