@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>vibestho</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8fafc;
+      color: #222;
+    }
+    header {
+      background: #22223b;
+      color: #fff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+    }
+    main {
+      padding: 2rem 1rem;
+      max-width: 600px;
+      margin: 2rem auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+    footer {
+      text-align: center;
+      color: #888;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>vibestho</h1>
+    <p>Welcome to the vibestho app!</p>
+  </header>
+  <main>
+    <h2>Let the vibes flow.</h2>
+    <p>This is your starting point for the vibestho application. Customize this page to build out your features!</p>
+  </main>
+  <footer>
+    &copy; 2025 vibestho
+  </footer>
+</body>
+</html>
