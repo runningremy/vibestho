@@ -1,43 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>vibestho</title>
+  <!-- ...existing head... -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
     <h1>vibestho</h1>
     <p>Welcome to the vibestho app!</p>
+    <div id="userSection">
+      <button id="signInBtn">Sign in with Google</button>
+      <span id="userInfo" style="display:none;">
+        Signed in as <span id="userName"></span>
+        <button id="signOutBtn">Sign out</button>
+      </span>
+    </div>
   </header>
-  <main>
-    <section class="lyric-form-section">
-      <h2>Share how a lyric makes you feel</h2>
-      <form id="lyricForm" autocomplete="off">
-        <label>
-          Song Title
-          <input type="text" id="song" name="song" required placeholder="e.g., Imagine">
-        </label>
-        <label>
-          Paste lyrics (with artist info)
-          <textarea id="lyrics" name="lyrics" required placeholder="Paste lyrics here, including artist if available"></textarea>
-        </label>
-        <label>
-          How does it make you feel?
-          <input type="text" id="feeling" name="feeling" required placeholder="e.g., Hopeful, nostalgic, etc.">
-        </label>
-        <button type="submit">Add Entry</button>
-      </form>
-    </section>
-    <section id="entriesSection">
-      <h2>Lyric Feels Gallery</h2>
-      <div id="entries"></div>
-    </section>
-  </main>
-  <footer>
-    &copy; 2025 vibestho
-  </footer>
+  <!-- ...existing main and footer... -->
   <script src="app.js"></script>
 </body>
 </html>
