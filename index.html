@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ...existing head... -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>vibestho</title>
+  <!-- Firebase scripts -->
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
   <link rel="stylesheet" href="styles.css">
@@ -18,7 +21,36 @@
       </span>
     </div>
   </header>
-  <!-- ...existing main and footer... -->
+  <main>
+    <section class="lyric-form-section" id="formSection" style="display:none;">
+      <h2>Share how a lyric makes you feel</h2>
+      <form id="lyricForm" autocomplete="off">
+        <label>
+          Song Title
+          <input type="text" id="song" name="song" required placeholder="e.g., Imagine">
+        </label>
+        <label>
+          Paste lyrics (with artist info)
+          <textarea id="lyrics" name="lyrics" required placeholder="Paste lyrics here, including artist if available"></textarea>
+        </label>
+        <label>
+          How does it make you feel?
+          <input type="text" id="feeling" name="feeling" required placeholder="e.g., Hopeful, nostalgic, etc.">
+        </label>
+        <button type="submit">Add Entry</button>
+      </form>
+    </section>
+    <section id="entriesSection" style="display:none;">
+      <h2>Lyric Feels Gallery</h2>
+      <div id="entries"></div>
+    </section>
+    <section id="pleaseSignIn" style="text-align:center; color:#ff9800; font-size:1.2rem; margin:3rem 0; display:none;">
+      Please sign in to submit and view lyric entries.
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 vibestho
+  </footer>
   <script src="app.js"></script>
 </body>
 </html>
