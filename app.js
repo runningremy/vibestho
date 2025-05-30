@@ -1,24 +1,40 @@
-document.getElementById('lyricForm').addEventListener('submit', function(e) {
-  e.preventDefault();
+// -- Paste your Firebase config here --
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  // ...the rest from your Firebase project...
+};
+firebase.initializeApp(firebaseConfig);
 
-  // Get form values
-  const song = document.getElementById('song').value.trim();
-  const lyrics = document.getElementById('lyrics').value.trim();
-  const feeling = document.getElementById('feeling').value.trim();
+const auth = firebase.auth();
+const provider = new firebase.auth.GoogleAuthProvider();
 
-  // Create entry card
-  const entryCard = document.createElement('div');
-  entryCard.className = 'entry-card';
+const signInBtn = document.getElementById('signInBtn');
+const signOutBtn = document.getElementById('signOutBtn');
+const userSection = document.getElementById('userSection');
+const userInfo = document.getElementById('userInfo');
+const userName = document.getElementById('userName');
 
-  entryCard.innerHTML = `
-    <div class="entry-lyric">${lyrics.replace(/\n/g, '<br>')}</div>
-    <div class="entry-meta">${song ? `— ${song}` : ""}</div>
-    <div class="entry-feeling">💬 ${feeling}</div>
-  `;
+signInBtn.onclick = () => {
+  auth.signInWithPopup(provider);
+};
 
-  // Add to entries list
-  document.getElementById('entries').prepend(entryCard);
+signOutBtn.onclick = () => {
+  auth.signOut();
+};
 
-  // Clear form
-  this.reset();
+auth.onAuthStateChanged(user => {
+  if (user) {
+    userName.textContent = user.displayName || user.email;
+    signInBtn.style.display = 'none';
+    userInfo.style.display = 'inline';
+    // Optionally, show/hide form or entries based on login
+  } else {
+    userName.textContent = '';
+    signInBtn.style.display = 'inline';
+    userInfo.style.display = 'none';
+    // Optionally, hide form/entries
+  }
 });
+
+// ...rest of your app.js (form handling, etc.)...
