@@ -46,6 +46,27 @@ header p {
   font-weight: 500;
   letter-spacing: 1px;
 }
+#userSection {
+  margin-top: 1.5rem;
+}
+#signInBtn, #signOutBtn {
+  background: linear-gradient(90deg, #ff9800 40%, #ff7043 100%);
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  padding: 0.7rem 1.1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 0 0.5rem;
+  transition: background 0.2s;
+}
+#signInBtn:hover, #signOutBtn:hover {
+  background: linear-gradient(90deg, #ff7043 40%, #ff9800 100%);
+}
+#userInfo {
+  font-size: 1.08rem;
+}
 
 main {
   max-width: 850px;
@@ -63,7 +84,6 @@ main {
 .lyric-form-section {
   margin-bottom: 0;
 }
-
 .lyric-form-section h2 {
   text-align: center;
   color: #ff9800;
@@ -82,7 +102,6 @@ form {
   box-shadow: 0 2px 8px rgba(255, 152, 0, 0.06);
   align-items: flex-start;
 }
-
 form label {
   display: flex;
   flex-direction: column;
@@ -91,7 +110,6 @@ form label {
   gap: 0.6rem;
   font-size: 1.08rem;
 }
-
 form input[type="text"],
 form textarea {
   font-size: 1.08rem;
@@ -103,12 +121,10 @@ form textarea {
   box-shadow: 0 1px 3px rgba(255, 152, 0, 0.04);
   margin-top: 0.2rem;
 }
-
 form textarea {
   min-height: 70px;
   max-height: 180px;
 }
-
 form button {
   grid-column: span 2;
   background: linear-gradient(90deg, #ff9800 40%, #ff7043 100%);
@@ -127,11 +143,9 @@ form button:hover {
   background: linear-gradient(90deg, #ff7043 40%, #ff9800 100%);
   transform: translateY(-2px) scale(1.03);
 }
-
 #entriesSection {
   margin-top: 0;
 }
-
 #entriesSection h2 {
   color: #673ab7;
   font-size: 1.35rem;
@@ -140,13 +154,11 @@ form button:hover {
   text-align: center;
   letter-spacing: 1px;
 }
-
 #entries {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem 2.5rem;
 }
-
 .entry-card {
   background: linear-gradient(90deg, #fffde7 70%, #f3e5f5 100%);
   border-left: 8px solid #ff9800;
@@ -159,13 +171,13 @@ form button:hover {
   min-height: 150px;
   justify-content: center;
 }
-
 .entry-lyric {
   font-size: 1.22rem;
   color: #673ab7;
   font-style: italic;
   margin-bottom: 0.3rem;
   font-weight: 600;
+  word-break: break-word;
 }
 .entry-meta {
   font-size: 1rem;
@@ -182,7 +194,12 @@ form button:hover {
   border-left: 4px solid #ff9800;
   font-weight: 500;
 }
-
+.entry-user {
+  font-size: 0.95rem;
+  color: #888;
+  margin-top: 0.2rem;
+  font-style: italic;
+}
 footer {
   text-align: center;
   color: #888;
@@ -190,7 +207,6 @@ footer {
   margin-top: 2rem;
   font-size: 1.04rem;
 }
-
 /* Responsive enhancements */
 @media (max-width: 900px) {
   main {
