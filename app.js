@@ -1,4 +1,4 @@
-// For demo purposes: store entries in localStorage
+// Store entries in localStorage
 function saveEntries(entries) {
   localStorage.setItem('vibesthoEntries', JSON.stringify(entries));
 }
